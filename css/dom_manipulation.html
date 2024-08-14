@@ -17,6 +17,9 @@
         .blueBorder {
             border: 2px solid blue;
         }
+        #tb1{
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -41,10 +44,10 @@
             if (val == ""){
                 tb1 = document.querySelector("#tb1");
                 tb1.classList.add('redBorder');
-                tb1.classList.remove('blueBorder')
+                tb1.classList.remove('blueBorder');
             }
             else{
-                tb1.classList.remove('redBorder')
+                tb1.classList.remove('redBorder');
                 tb1.classList.add('blueBorder');
             }
             
