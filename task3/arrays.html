@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox to Array</title>
+    <style>
+        body {
+            background: radial-gradient(circle, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        #heading {
+            margin-top: 50px;
+            font-size: 3em;
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px);
+            text-align: center;
+        }
+        .arrays {
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #ffffff;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        input {
+            font-size: 18px;
+            padding: 10px;
+            margin-right: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            background: #1e1e1e;
+            color: #ffffff;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <center><h1 id="heading">TASK 3</h1></center>
+    <div class="container">
+        <div class="arrays">
+            <input type="text" id="inputValue" placeholder="Enter a value">
+            <button onclick="pushToArray()">Add to Array</button>
+        </div>
+    </div>
+    <script>
+        let arr = [];
+        function pushToArray() {
+            let inputValue = document.getElementById('inputValue').value;
+            if (inputValue) {
+                arr.push(inputValue);
+                console.log(arr);
+                document.getElementById('inputValue').value = '';
+            } else {
+                alert('Please enter a value.');
+            }
+        }
+    </script>
+</body>
+</html>

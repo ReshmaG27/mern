@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register-Regres</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(-50px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 36px;
+      opacity: 0;
+      animation: fadeIn 0.6s forwards 0.2s;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    label {
+      font-size: 18px;
+      margin-bottom: 5px;
+      display: block;
+      color: #555;
+    }
+    .required::after {
+      content: '*';
+      color: red;
+      margin-left: 5px;
+    }
+    input {
+      margin: 10px 0;
+      padding: 15px;
+      width: calc(100% - 32px);
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus {
+      border-color: #ff6f61;
+      box-shadow: 0 0 5px rgba(255, 111, 97, 0.3);
+      outline: none;
+    }
+    button {
+      background: linear-gradient(135deg, #ff6f61, #d63a31); /* Gradient button color */
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #d63a31, #b23e2e); /* Darker gradient on hover */
+      transform: translateY(-2px);
+    }
+    button:active {
+      background: linear-gradient(135deg, #b23e2e, #8a2c1e); /* Even darker gradient on active */
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <form id="registerForm">
+    <h2>Register</h2>
+    <label for="email" class="required">Email</label>
+    <input type="email" id="email" placeholder="Email" required>
+    <label for="password" class="required">Password</label>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      fetch('https://reqres.in/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Register Response:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>

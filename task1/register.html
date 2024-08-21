@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p a{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+    </ul>
+    <div class="container">
+        <form  id="form" onsubmit="successfull(event)">
+            <h1>Register</h1>
+            <div class="input-group">
+                <label for="username" class="required">Username</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input-group">
+                <label for="email" class="required">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="input-group">
+                <label for="password" class="required">Password</label>
+                <input type="password" id="password" name="password" >
+            </div>
+            <div class="input-group">
+                <label for="cpassword" class="required">Confirm Password</label>
+                <input type="password" id="cpassword" name="cpassword">
+            </div>
+            <button type="submit" id="registerButton" >Register</button>
+            <p>Already Registered? <a href="login.html">Login here</a></p>
+        </form>
+    </div>
+</body>
+<script>
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const cpassword = document.getElementById('cpassword');
+    const registerButton = document.getElementById('registerButton');
+    function isValidEmail(email) {
+        // Basic email format validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    function successfull(event) {
+        event.preventDefault(); 
+        if (!username.value || !email.value || !password.value || !cpassword.value) {
+            alert("Please fill  all fields.");
+            return;
+        }
+        if (username.value.length < 3 || username.value.length > 10) {
+            alert("Username must be between 3 and 10 characters.");
+            return;
+        }
+    
+        
+        if (!isValidEmail(email.value)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+        if (password.value.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            return;
+        }
+        if (password.value !== cpassword.value) {
+            alert("Passwords do not match.");
+            return;
+        }
+    
+
+        console.log('Username:', username.value);
+        console.log('Email:', email.value);
+        console.log('Password:', password.value);
+        alert("Successfully Registered");
+        username.value = '';
+        email.value = '';
+        password.value = '';
+        cpassword.value='';
+    }
+
+username.addEventListener('input', checkInputs);
+email.addEventListener('input', checkInputs);
+password.addEventListener('input', checkInputs);
+cpassword.addEventListener('input', checkInputs);
+
+</script>
+</html>
