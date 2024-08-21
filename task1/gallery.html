@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body{
+        background: rgb(9,9,121);
+        background: radial-gradient(circle, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    }
+    .content, .content1,.content2 {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        margin-bottom: 30px;
+    }
+    .content div, .content1 div,.content2 div {
+        height: 25vh;
+        width: 25%;
+        overflow: hidden;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        border: 3px solid #ccc; 
+        box-sizing: border-box; 
+    }
+    img:hover {
+        opacity: 0.7;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
+        border-color: red; 
+    }
+    h1{
+        text-align: center;
+        color: antiquewhite;
+    }
+    </style>
+</head>
+<body>
+    <h1>This is gallery page</h1>
+    <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+    </ul>
+    <div class="content">
+        <div><img src="pic1.jpeg" alt="Image 1"></div>
+        <div><img src="pic1.jpeg" alt="Image 2"></div>
+        <div><img src="pic1.jpeg" alt="Image 3"></div>
+        <div><img src="pic1.jpeg" alt="Image 4"></div>
+        <div><img src="pic1.jpeg" alt="Image 5"></div>
+        <div><img src="pic1.jpeg" alt="Image 6"></div>
+    </div>
+    <div class="content1">
+        <div><img src="pic1.jpeg" alt="Image 7"></div>
+        <div><img src="pic1.jpeg" alt="Image 8"></div>
+        <div><img src="pic1.jpeg" alt="Image 9"></div>
+        <div><img src="pic1.jpeg" alt="Image 10"></div>
+        <div><img src="pic1.jpeg" alt="Image 11"></div>
+        <div><img src="pic1.jpeg" alt="Image 12"></div>
+    </div>
+    <div class="content2">
+        <div><img src="pic1.jpeg" alt="Image 13"></div>
+        <div><img src="pic1.jpeg" alt="Image 14"></div>
+        <div><img src="pic1.jpeg" alt="Image 15"></div>
+        <div><img src="pic1.jpeg" alt="Image 16"></div>
+        <div><img src="pic1.jpeg" alt="Image 17"></div>
+        <div><img src="pic1.jpeg" alt="Image 18"></div>
+    </div>
+</body>
+</html>
