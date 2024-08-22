@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrayobjects</title>
+    <script>
+        let personList = [{
+            "name":"Reshma",
+            "mobile": 9940410086,
+            "address": "parrys"},
+            {"name":"resh",
+             "address": "parrys",
+            "email":"res@gmail.com",
+            "mobile": 9876543210},{
+             "name":"reshu",
+             "address": "parrys",
+             "mobile": 9876598765,
+            "email":"resh1@gmail.com"
+                
+            }
+        ]
+        // use a for loop to print all the parts
+        i = 0
+        for (let i in personList){
+            console.log(personList[i]['name']);
+            console.log(personList[i]['mobile']);
+            console.log(personList[i]['address']);
+            i = i+1
+        }
+        
+        console.log(personList[2]['name']); // address of 3 rd one
+        console.log(personList[1]['name']); // address of 2 rd one
+    </script>
+</head>
+<body>
+    <h1> create a arrary list and use for loop to print them all</h1>
+    
+</body>
+</html>
