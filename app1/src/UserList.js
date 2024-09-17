@@ -5,7 +5,7 @@ export default function Register1() {
 
   async function getData() {
     try {
-      let res = await fetch("https://reqres.in/api/users?page=1"); 
+      let res = await fetch("https://reqres.in/api/users?page=2"); 
       let json = await res.json();
       setUserList(json.data); 
     } catch (error) {

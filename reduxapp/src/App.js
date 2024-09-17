@@ -9,6 +9,7 @@ import Header from './Header';
 import {
   createBrowserRouter, RouterProvider,} from "react-router-dom";
 import { myStore } from './redux/config';
+import Web from './web';
 
 let routerPaths = createBrowserRouter([
   {"path":"/","element":<Home/>},
@@ -16,6 +17,7 @@ let routerPaths = createBrowserRouter([
   {"path":"/About.js","element":<About/>},
   {"path":"/Contact.js","element":<Contact/>},
   {"path":"/Header.js","element":<Header/>},
+  {"path":"/Web","element":<Web/>}
 ])
     
 function App() {

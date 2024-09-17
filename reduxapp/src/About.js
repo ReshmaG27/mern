@@ -1,12 +1,29 @@
-import React from 'react';
+import { useDispatch, useSelector } from "react-redux"
 
-const About = () => {
-  return (
-    <div>
-      <h2>about</h2>
-     
-    </div>
-  );
-};
+export default function About(){
+    const counterval = useSelector((state)=>state.counter);
+    const myDetails = useSelector((state)=>state.myDetails);
+    const dispatch = useDispatch();
+    const add=()=>{
+        dispatch({
+            type:"add"
+        })
 
-export default About;
+    }
+    const sub=()=>{
+        dispatch({
+            type:"sub"
+        })  
+    }
+
+    return(
+        <div >
+            <h1>ABOUT</h1> 
+            <h1>from Redux  {counterval}</h1>
+            <input type="button" value="Add" onClick={add}/><br></br>
+            <input type="button" value ="Sub" onClick={sub}/>
+            <h1>from Home page {myDetails.name} </h1>
+            
+        </div>
+    )
+}
